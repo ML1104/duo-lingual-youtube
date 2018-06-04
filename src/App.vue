@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-link to="/eng">Go to English</router-link>
+    <router-link to="/srb">Go to Serbian</router-link>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -12,6 +13,11 @@ export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+  methods: {
+      changeLang() {
+
+      }
   }
 }
 </script>
