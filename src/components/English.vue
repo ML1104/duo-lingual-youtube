@@ -2,6 +2,7 @@
     <ul>
         <li v-for="video in engVideosFormatted"
             v-bind:key="video.youtubeId">
+            <img :src="video.thumbnail">
             <a :href="video.url">{{ video.title }}</a>
         </li>
     </ul>
@@ -36,6 +37,32 @@ export default {
 
 </script>
 
-<style scoped>
+<style>
+    ul {
+        margin: 0px;
+    }
 
+    ul li {
+         display: flex;
+         justify-content: center;
+         flex-direction: column;
+         width: 120px;
+         margin: auto;
+         padding: 10px 2px;
+     }
+
+    img {
+        display: block;
+        width: 120px;
+    }
+
+    a {
+        padding-top: 4px;
+        text-decoration: none;
+        color: #666;
+    }
+
+    a:hover {
+        color: #aaa;
+    }
 </style>
