@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <router-link class="button" to="/eng">Go to English</router-link>
-    <router-link class="button" to="/srb">Go to Serbian</router-link>
+    <router-link @click="saveCookieEng" class="button" to="/eng">Go to English</router-link>
+    <router-link @click="saveCookieSrb" class="button" to="/srb">Go to Serbian</router-link>
     <router-view></router-view>
   </div>
 </template>
@@ -10,9 +10,28 @@
 
 export default {
   name: 'app',
-  components: {
+  data() {
+      return {
+          // eslint-disable-next-line
+          goTo: agCookie.read('lang')
+      }
+  },
+  mounted() {
+      window.location.replace("http://localhost:8080/#/" + this.goTo);
   },
   methods: {
+      saveCookieEng() {
+          // eslint-disable-next-line
+          agCookie.erase('lang');
+          // eslint-disable-next-line
+          agCookie.create('lang', 'eng', 200);
+      },
+      saveCookieSrb() {
+          // eslint-disable-next-line
+          agCookie.erase('lang');
+          // eslint-disable-next-line
+          agCookie.create('lang', 'srb', 200);
+      }
   }
 }
 </script>
