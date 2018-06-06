@@ -37,15 +37,15 @@ export default {
   font-size: 20px;
   color: white;
   position: absolute;
-  top: 10px;
+  left: 750px;
 }
 
   .button:first-child {
-    left: 750px;
+    top: 10px;
   }
 
-  .button:last-child {
-    left: 1045px;
+  .button:nth-child(2) {
+    top: 60px;
   }
 
 </style>
